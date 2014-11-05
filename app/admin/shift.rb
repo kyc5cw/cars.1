@@ -1,4 +1,5 @@
 ActiveAdmin.register Shift do
+  permit_params :day, :role
 
 
   # See permitted parameters documentation:
