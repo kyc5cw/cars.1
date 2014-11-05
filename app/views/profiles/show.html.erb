@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user %>
+</p>
+
+<p>
+  <strong>Certification:</strong>
+  <%= @profile.certification %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @profile.phone_number %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @profile.active %>
+</p>
+
+<p>
+  <strong>Qualifications:</strong>
+  <%= @profile.qualifications %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
