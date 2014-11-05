@@ -29,6 +29,7 @@ class CredentialsController < ApplicationController
   # POST /credentials.json
   def create
     @credential = Credential.new(credential_params)
+    @credentials.user = current_user
 
     respond_to do |format|
       if @credential.save
