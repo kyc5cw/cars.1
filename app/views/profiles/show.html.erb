@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Profile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Profile %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:certification) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.certification %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_number) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.phone_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:active) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.active %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:qualifications) %></dt>
+      <dd><pre class="prettyprint"><%= @profile.qualifications %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Certification:</strong>
-  <%= @profile.certification %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              profiles_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_profile_path(@profile), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              profile_path(@profile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @profile.phone_number %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @profile.active %>
-</p>
-
-<p>
-  <strong>Qualifications:</strong>
-  <%= @profile.qualifications %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
