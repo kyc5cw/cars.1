@@ -1,4 +1,5 @@
 ActiveAdmin.register Profile do
+  permit_params :certification, :phone_number, :active, :qualifications
 
 
   # See permitted parameters documentation:
