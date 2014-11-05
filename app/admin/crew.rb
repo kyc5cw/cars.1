@@ -1,4 +1,5 @@
 ActiveAdmin.register Crew do
+  permit_params :scheduled_time
 
 
   # See permitted parameters documentation:
